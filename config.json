@@ -1,0 +1,33 @@
+{
+  "input_csv": "/content/drive/MyDrive/project/input.csv",
+  "input2_csv": "/content/drive/MyDrive/project/input2.csv",
+  "output_parquet": "/content/drive/MyDrive/project/output.parquet",
+  "transformations": [
+    {
+      "type": "date_format",
+      "column": "Date of birth",
+      "input_format": "yyyy-MM-dd",
+      "output_format": "MM-dd-yyyy"
+    },
+    {
+      "type": "concat",
+      "columns": ["First Name", "Last Name"],
+      "output_column": "Full Name",
+      "separator": " "
+    },
+    {
+      "type": "split",
+      "column": "Date of birth",
+      "separator": "-",
+      "output_columns": ["Month", "Day", "Year"]
+    },
+    {
+      "type": "drop",
+      "column": "First Name"
+    },
+    {
+      "type": "join",
+      "join_column": "Industry"
+    }
+  ]
+}
