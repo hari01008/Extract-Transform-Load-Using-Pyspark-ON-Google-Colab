@@ -1,6 +1,3 @@
-# Extract-Transform-Load Using PySpark on Google Colab
-[![Build Status](https://img.shields.io/travis/com/hari01008/Extract-Transform-Load-Using-Pyspark-ON-Google-Colab/main)](https://travis-ci.com/hari01008/Extract-Transform-Load-Using-Pyspark-ON-Google-Colab)
-
 Welcome to the Extract-Transform-Load (ETL) Using PySpark program on Google Colab. This repository contains a PySpark program that performs data extraction, transformation, and loading operations using Apache Spark on Google Colab.
 
 ## About the Program
