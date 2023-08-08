@@ -1,59 +1,45 @@
-# Extract-Transform-Load-Using-Pyspark-ON-Google-Colab
-Here we wrote a pyspark program read data from csv file and convert it to .parquet file and applying the transformation and save ant print the final output in parquet file format
-The provided code is an ETL (Extract, Transform, Load) program written in Python using Apache Spark and the PySpark library. It performs the following steps:
+# Extract-Transform-Load Using PySpark on Google Colab
+[![Build Status](https://img.shields.io/travis/com/hari01008/Extract-Transform-Load-Using-Pyspark-ON-Google-Colab/main)](https://travis-ci.com/hari01008/Extract-Transform-Load-Using-Pyspark-ON-Google-Colab)
 
-1. It imports the required libraries, including `json` for working with JSON files, `pyspark` for Spark operations, and other necessary functions and classes.
+Welcome to the Extract-Transform-Load (ETL) Using PySpark program on Google Colab. This repository contains a PySpark program that performs data extraction, transformation, and loading operations using Apache Spark on Google Colab.
 
-2. It creates a SparkSession, which is the entry point for working with Spark.
+## About the Program
 
-3. It loads the configuration from a `config.json` file. This file contains information about the input CSV files, transformations to apply, and the output Parquet file.
+The provided code is an ETL (Extract, Transform, Load) program written in Python using Apache Spark and the PySpark library. It reads data from CSV files, applies transformations, and saves the final output in Parquet file format.
 
-4. It checks if the input CSV file exists and is in the correct format.
+## Program Steps
 
-5. It loads the DataFrame from the input CSV file using Spark's `read.csv()` function. It also loads another DataFrame from a second input CSV file, if specified in the configuration.
+1. **Import Libraries:** Necessary libraries are imported, including `json` for working with JSON files and `pyspark` for Spark operations.
 
-6. It converts the DataFrame to a Parquet file format using the `write.mode().parquet()` method. This step is necessary to perform transformations efficiently.
+2. **Create SparkSession:** A SparkSession, the entry point for Spark, is created.
 
-7. It loads the DataFrames from the Parquet files using Spark's `read.parquet()` function.
+3. **Load Configuration:** The program loads configuration from a `config.json` file containing input CSV files, transformations, and output paths.
 
-8. It applies transformations specified in the configuration to the DataFrame. These transformations can include date formatting, column concatenation, column splitting, and column dropping.
+4. **Check Input:** The program checks if the input CSV file exists and is in the correct format.
 
-9. If a column named 'Industry' exists in the second input DataFrame and a column named 'sno' exists in the first DataFrame, it joins the two DataFrames based on the 'sno' column and creates a new DataFrame called `joined_df`.
+5. **Load DataFrames:** DataFrames are loaded from input CSV files using Spark's `read.csv()` function.
 
-10. It saves the transformed DataFrame or the joined DataFrame (if applicable) to a new Parquet file specified in the configuration.
+6. **Convert to Parquet:** DataFrames are converted to Parquet format using the `write.mode().parquet()` method.
 
-11. It reads the final transformed DataFrame from the output Parquet file.
+7. **Load Parquet DataFrames:** DataFrames are loaded from Parquet files using Spark's `read.parquet()` function.
 
-12. It creates a new DataFrame called `final_df` with aligned 'sno' values using Spark's `row_number()` function and `Window.orderBy()` method.
+8. **Apply Transformations:** Specified transformations are applied to the DataFrame, including date formatting, column operations, and dropping columns.
 
-13. It displays the final DataFrame with aligned 'sno' values using the `show()` method.
+9. **Join DataFrames:** If applicable, DataFrames are joined based on specified columns.
 
-***********************To run this program on Google Colab, you would need to follo w these steps:**********************
+10. **Save Transformed Data:** The transformed or joined DataFrame is saved to a new Parquet file.
 
-1. Upload the `config.json` file and the input CSV files to your Google Drive.
+11. **Read Final Data:** The final DataFrame is read from the output Parquet file.
 
-2. Mount your Google Drive in Colab using the following code:
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-```
+12. **Align 'sno' Values:** A new DataFrame is created with aligned 'sno' values using Spark's window functions.
 
-3. Modify the file path in the code to match the location of the `config.json` file in your Google Drive. For example:
-```python
-with open('/content/drive/MyDrive/project/config.json') as f:
-```
+13. **Display Final DataFrame:** The final DataFrame is displayed using the `show()` method.
 
-4. Modify the file paths for the input CSV files in the configuration to match their locations in your Google Drive.
+## Running the Program on Google Colab
 
-5. Run the code cell. It will load the configuration, perform the ETL process, and display the final DataFrame with aligned 'sno' values.
+1. **Upload Files:** Upload the `config.json` file and input CSV files to your Google Drive.
 
-Ensure that you have installed the necessary libraries (such as PySpark) in your Colab environment. You can install them using `!pip install library_name` if needed.
-
-Note: Adjust the code as necessary to match your specific file paths, configurations, and transformations.
-
-DATASET :
-contact me for dataset.
-
-Contact:
-EMAIL:haricse0808@gmail.com
-
+2. **Mount Google Drive:** Mount your Google Drive in Colab using the code:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
